@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Haloooo!!</title>
+    <script type="text/javascript">
+        alert("Haloooo");
+        alert("So it's your first session huh!");
+        confirm("I just wanted to tell you some things, hehe");
+    </script>
+
+    <style type="text/css">
+        body {
+            background-color: #F6D6D6;
+        }
+
+        p {
+            color: black;
+            font-size: 40px;
+            display: block;
+            position: center;
+            margin-right: 200px;
+        }
+
+        .app {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            height: 40%;
+            width: 65%;
+            margin-top: 100px;
+            margin-right: 250px;
+        }
+
+        input {
+            position: absolute;
+            cursor: cursor;
+            display: flex;
+            margin: 300px 10px;
+            padding: 10px 30px;
+            background-color: lightgreen;
+        }
+
+        .yesbtn {
+            left: 200px;
+        }
+
+        button {
+            position: absolute;
+            display: flex;
+            cursor: cursor;
+            margin: 300px 100px;
+            padding: 10px 30px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <p id="question">I get that you're excited about your first session.But first, you should know what to expect, so tell me, Do you wanna know?</p>
+        <a href="https://youtu.be/1TiOA9w-l2s?si=ZXKrrWkZLZh_SRvq" target="_blank">
+            <img src="https://media.tenor.com/oQ_6wxtMrx0AAAAi/pentol-quby.gif">
+        </a>
+        <input type="button" class="yesbtn" id="yes" value="YES"></input>
+        <button id="no" class="nobtn">NO</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        var noBtn = document.getElementById('no');
+        var yesBtn = document.getElementById('yes');
+        var ques = document.getElementById('question');
+
+        noBtn.addEventListener("click", function () {
+            var changeTop = Math.random() * ($(window).height() - $("button").height());
+            var changeLeft = Math.random() * ($(window).width() - $("button").width());
+            $("button").css("margin-top", changeTop + "px");
+            $("button").css("margin-left", changeLeft + "px");
+        })
+
+        yesBtn.addEventListener("click", function () {
+            // Redirecting the user to a new web page
+            window.location.href = "./session.html";
+        })
+    </script>
+</body>
+
+</html>
